@@ -5,8 +5,8 @@
 }
 :root {
 	--index: calc(1vw + 1vh);
-	--color-header: #f4efec;
-	--color-text: #cdc6c3;
+	--color-header: #262424;
+	--color-text: #252525;
 	--gallery-gap: calc(var(--index) * 7.5);
 }
 @font-face {
@@ -33,7 +33,8 @@ h6 {
 	will-change: transform;
 }
 body {
-	background-image: url(../img/bg.jpg);
+	background-color: rgb(220, 221, 193);
+	/* background-image: url(../img/bg.jpg); */
 	background-size: 50px;
 	color: #fafafa;
 	font-family: raleway-c;
@@ -53,11 +54,18 @@ body {
 	padding: 0 7vw;
 }
 .main-title {
-	font-size: calc(var(--index) * 8);
+	color: var(--color-header);
+	font-size: calc(var(--index) * 7.5);
 	position: absolute;
 	width: min-content;
-	bottom: 12vh;
+	bottom: 35vh;
 	line-height: 0.9;
+}
+.main-subtitle {
+	color: var(--color-header);
+	font-size: calc(var(--index) * 6);
+	position: absolute;
+	bottom: 13vh;
 }
 .gallery {
 	flex: 1;
@@ -96,6 +104,13 @@ body {
 }
 
 @media screen and (max-width: 768px) {
+	.main-title {
+		bottom: 25vh;
+		font-size: calc(var(--index) * 6);
+	}
+	.main-subtitle {
+		font-size: calc(var(--index) * 5.5);
+	}
 	.gallery__item {
 		margin-right: 0;
 		margin-bottom: 60px;
@@ -106,5 +121,41 @@ body {
 
 	.gallery__right {
 		clear: both; /* чтобы не было обтекания */
+	}
+}
+.social-media {
+	text-align: center;
+	margin: 20px;
+	padding-bottom: 50px;
+}
+
+.social-media h2 {
+	margin-bottom: 10px;
+	color: var(--color-header);
+	font-size: calc(var(--index) * 2);
+}
+
+.social-media ul {
+	list-style: none;
+	padding: 0;
+}
+
+.social-media ul li {
+	display: inline-block;
+	margin: 0 10px;
+}
+
+.social-media ul li a {
+	display: flex;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	border-radius: 50%;
+}
+
+/* Медиа запросы для адаптивного дизайна */
+@media (max-width: 768px) {
+	.social-media ul li {
+		margin: 0 5px;
 	}
 }
